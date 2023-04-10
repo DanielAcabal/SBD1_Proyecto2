@@ -1,0 +1,73 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="79E39762-17A4-EFBC-7A4E-D5FE9889933D" name="Producto">
+<createdBy>danielacabal</createdBy>
+<createdTime>2023-04-07 18:49:56 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="1896A38C-8091-6971-BC17-955F9E21CDAB" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_Producto" id="FD763993-592F-4AA7-36CD-4AD915DFEE71">
+<createdBy>danielacabal</createdBy>
+<createdTime>2023-04-07 22:23:46 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="1896A38C-8091-6971-BC17-955F9E21CDAB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>3</dataTypeSize>
+<ownDataTypeParameters>3,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Nombre" id="2D364E00-524A-8931-B49B-0EDAAAE3733A">
+<createdBy>danielacabal</createdBy>
+<createdTime>2023-04-07 22:27:06 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="1896A38C-8091-6971-BC17-955F9E21CDAB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Precio" id="17E60610-2FA9-56A4-B1B6-0096D395D71A">
+<createdBy>danielacabal</createdBy>
+<createdTime>2023-04-07 22:29:30 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="1896A38C-8091-6971-BC17-955F9E21CDAB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,5,2</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="0F5AABC6-2BB5-F4BC-AB97-2878BA846221" name="Producto PK">
+<createdBy>danielacabal</createdBy>
+<createdTime>2023-04-07 22:27:01 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="1896A38C-8091-6971-BC17-955F9E21CDAB" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>FD763993-592F-4AA7-36CD-4AD915DFEE71</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

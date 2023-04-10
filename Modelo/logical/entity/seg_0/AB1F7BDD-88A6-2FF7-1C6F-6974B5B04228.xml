@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="A48B1C0C-AB6D-B72E-6129-FC033F24F296" name="Restaurante">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="AB1F7BDD-88A6-2FF7-1C6F-6974B5B04228" name="Cliente">
 <createdBy>danielacabal</createdBy>
-<createdTime>2023-04-07 18:23:43 UTC</createdTime>
+<createdTime>2023-04-07 18:49:19 UTC</createdTime>
 <ownerDesignName>Modelo</ownerDesignName>
 <engineerTo>
 <item key="1896A38C-8091-6971-BC17-955F9E21CDAB" value="true"/>
@@ -15,9 +15,21 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="id_Restaurante" id="0B45028C-7815-6A18-02CD-4743D8708C5E">
+<Attribute name="DPI_Cliente" id="7EBB12A8-C407-7A05-0930-F80C1271D878">
 <createdBy>danielacabal</createdBy>
-<createdTime>2023-04-07 18:26:37 UTC</createdTime>
+<createdTime>2023-04-07 19:24:54 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="1896A38C-8091-6971-BC17-955F9E21CDAB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Nombre" id="B1BCD234-610F-4897-2268-679D7051C1E6">
+<createdBy>danielacabal</createdBy>
+<createdTime>2023-04-07 19:25:21 UTC</createdTime>
 <ownerDesignName>Modelo</ownerDesignName>
 <engineerTo>
 <item key="1896A38C-8091-6971-BC17-955F9E21CDAB" value="true"/>
@@ -28,9 +40,35 @@
 <dataTypeSize>30</dataTypeSize>
 <ownDataTypeParameters>30,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Telefono" id="A8046A49-46FA-5CFD-37FE-5C7F93612BAC">
+<Attribute name="Apellidos" id="71F893DE-A4E3-8EBB-BD73-89E45B96D893">
 <createdBy>danielacabal</createdBy>
-<createdTime>2023-04-07 21:58:52 UTC</createdTime>
+<createdTime>2023-04-07 19:25:34 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="1896A38C-8091-6971-BC17-955F9E21CDAB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Correo" id="ACFA83C8-ECBA-680D-3172-B3C9CAD7A9B0">
+<createdBy>danielacabal</createdBy>
+<createdTime>2023-04-07 19:25:46 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="1896A38C-8091-6971-BC17-955F9E21CDAB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Telefono" id="0A9AC275-5F2D-94C7-7B55-FC7866F6AD84">
+<createdBy>danielacabal</createdBy>
+<createdTime>2023-04-07 19:27:43 UTC</createdTime>
 <ownerDesignName>Modelo</ownerDesignName>
 <engineerTo>
 <item key="1896A38C-8091-6971-BC17-955F9E21CDAB" value="true"/>
@@ -40,71 +78,43 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Personal" id="F6EA89A1-29FB-7F50-5F56-C574B1BAF8B8">
+<Attribute name="NIT" id="0FE62F22-9BF3-77B4-DDF4-2459ADBD1243">
 <createdBy>danielacabal</createdBy>
-<createdTime>2023-04-07 21:59:07 UTC</createdTime>
+<createdTime>2023-04-07 19:28:25 UTC</createdTime>
 <ownerDesignName>Modelo</ownerDesignName>
 <engineerTo>
 <item key="1896A38C-8091-6971-BC17-955F9E21CDAB" value="true"/>
 </engineerTo>
+<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Parqueo" id="83696ED9-47B3-B2EE-DA4E-98A5F160DADB">
+<Attribute name="Fecha_nacimiento" id="BD377BF0-E5FD-8D37-1491-B3ECFC397EAC">
 <createdBy>danielacabal</createdBy>
-<createdTime>2023-04-07 21:59:44 UTC</createdTime>
+<createdTime>2023-04-07 19:29:33 UTC</createdTime>
 <ownerDesignName>Modelo</ownerDesignName>
 <engineerTo>
 <item key="1896A38C-8091-6971-BC17-955F9E21CDAB" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT006</logicalDatatype>
-<dataTypeSize>1 BYTE</dataTypeSize>
-<ownDataTypeParameters>1 BYTE,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="id_Direccion" id="20CD1392-0CD2-D788-1F26-71A98046CFBF">
-<createdBy>danielacabal</createdBy>
-<createdTime>2023-04-08 02:48:40 UTC</createdTime>
-<generatorID>E32C0DC0-6C36-9428-B74B-73E70E7AF7F7</generatorID>
-<ownerDesignName>Modelo</ownerDesignName>
-<engineerTo>
-<item key="1896A38C-8091-6971-BC17-955F9E21CDAB" value="true"/>
-</engineerTo>
-<referedAttribute>A7BF34B8-8884-D397-07DF-BCDD0B7F2697</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="id_Municipio" id="2E93F7F1-B4C1-EE70-1FDF-9531F79B4413">
-<createdBy>danielacabal</createdBy>
-<createdTime>2023-04-08 02:48:40 UTC</createdTime>
-<generatorID>E32C0DC0-6C36-9428-B74B-73E70E7AF7F7</generatorID>
-<ownerDesignName>Modelo</ownerDesignName>
-<engineerTo>
-<item key="1896A38C-8091-6971-BC17-955F9E21CDAB" value="true"/>
-</engineerTo>
-<referedAttribute>7AA0222B-0F2E-6340-C248-4EB9F269611D</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
+<logicalDatatype>LOGDT007</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="72211DDF-EF29-6AC0-70B9-C7FCF87EC3C5" name="Restaurante PK">
+<identifier id="A2F3D33D-3118-113A-1679-7802878C6CC8" name="Cliente PK">
 <createdBy>danielacabal</createdBy>
-<createdTime>2023-04-07 18:27:06 UTC</createdTime>
+<createdTime>2023-04-07 19:25:19 UTC</createdTime>
 <ownerDesignName>Modelo</ownerDesignName>
 <engineerTo>
 <item key="1896A38C-8091-6971-BC17-955F9E21CDAB" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>0B45028C-7815-6A18-02CD-4743D8708C5E</attributeRef>
+<attributeRef>7EBB12A8-C407-7A05-0930-F80C1271D878</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

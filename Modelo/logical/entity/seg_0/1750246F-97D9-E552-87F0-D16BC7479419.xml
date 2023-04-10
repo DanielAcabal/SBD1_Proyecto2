@@ -1,0 +1,77 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="1750246F-97D9-E552-87F0-D16BC7479419" name="Direccion_Entrega">
+<createdBy>danielacabal</createdBy>
+<createdTime>2023-04-07 18:49:46 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="1896A38C-8091-6971-BC17-955F9E21CDAB" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="DPI_Cliente" id="6B22EF2E-0D63-63A1-2071-409AB7110CFE">
+<createdBy>danielacabal</createdBy>
+<createdTime>2023-04-08 02:53:02 UTC</createdTime>
+<generatorID>F442780D-AC53-361F-2F73-3021243DFB8E</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="1896A38C-8091-6971-BC17-955F9E21CDAB" value="true"/>
+</engineerTo>
+<referedAttribute>7EBB12A8-C407-7A05-0930-F80C1271D878</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_Direccion" id="BF55BCD9-959B-7258-D316-429D539D1FF5">
+<createdBy>danielacabal</createdBy>
+<createdTime>2023-04-08 02:53:13 UTC</createdTime>
+<generatorID>5DD22CE6-61B9-91D0-C4F9-650D019112F1</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="1896A38C-8091-6971-BC17-955F9E21CDAB" value="true"/>
+</engineerTo>
+<referedAttribute>A7BF34B8-8884-D397-07DF-BCDD0B7F2697</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_Municipio" id="83A8D41A-86AE-6A5E-CDA0-A6A55EF91BDA">
+<createdBy>danielacabal</createdBy>
+<createdTime>2023-04-08 02:53:13 UTC</createdTime>
+<generatorID>5DD22CE6-61B9-91D0-C4F9-650D019112F1</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="1896A38C-8091-6971-BC17-955F9E21CDAB" value="true"/>
+</engineerTo>
+<referedAttribute>7AA0222B-0F2E-6340-C248-4EB9F269611D</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="D8FA9E8A-314F-07C5-312C-999FDEEAAA16" name="Direccion_Entrega PK">
+<createdBy>danielacabal</createdBy>
+<createdTime>2023-04-08 02:53:02 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="1896A38C-8091-6971-BC17-955F9E21CDAB" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>6B22EF2E-0D63-63A1-2071-409AB7110CFE</attributeRef>
+<attributeRef>BF55BCD9-959B-7258-D316-429D539D1FF5</attributeRef>
+<attributeRef>83A8D41A-86AE-6A5E-CDA0-A6A55EF91BDA</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

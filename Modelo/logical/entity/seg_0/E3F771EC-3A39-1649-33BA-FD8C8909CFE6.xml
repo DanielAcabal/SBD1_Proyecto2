@@ -1,0 +1,89 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="E3F771EC-3A39-1649-33BA-FD8C8909CFE6" name="Detalle_Orden">
+<createdBy>danielacabal</createdBy>
+<createdTime>2023-04-07 18:50:00 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="1896A38C-8091-6971-BC17-955F9E21CDAB" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="Cantidad" id="D26E1900-3BC3-6604-FA31-C90914EB5D90">
+<createdBy>danielacabal</createdBy>
+<createdTime>2023-04-07 22:32:40 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="1896A38C-8091-6971-BC17-955F9E21CDAB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Observacion" id="EC968F9E-241C-5F45-661F-588A6E80E996">
+<createdBy>danielacabal</createdBy>
+<createdTime>2023-04-07 22:33:23 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="1896A38C-8091-6971-BC17-955F9E21CDAB" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_Orden" id="09610515-26B1-EFF3-8BF9-0430E7BA972D">
+<createdBy>danielacabal</createdBy>
+<createdTime>2023-04-08 02:08:25 UTC</createdTime>
+<generatorID>258040E1-8B1B-7B24-09D3-A5B890B4FF3D</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="1896A38C-8091-6971-BC17-955F9E21CDAB" value="true"/>
+</engineerTo>
+<referedAttribute>0C68BD84-E137-6F12-2E12-7D10948C822D</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_Producto" id="9753A208-2F85-5EEC-7E92-7639F4F0E40D">
+<createdBy>danielacabal</createdBy>
+<createdTime>2023-04-08 02:08:47 UTC</createdTime>
+<generatorID>E74B556C-BD31-698B-5315-3C98C2E3F65A</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="1896A38C-8091-6971-BC17-955F9E21CDAB" value="true"/>
+</engineerTo>
+<referedAttribute>FD763993-592F-4AA7-36CD-4AD915DFEE71</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>3</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="3BCF5EA2-1D64-CF8D-164C-FBC619E24AF4" name="Detalle_Orden PK">
+<createdBy>danielacabal</createdBy>
+<createdTime>2023-04-08 02:08:25 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="1896A38C-8091-6971-BC17-955F9E21CDAB" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>09610515-26B1-EFF3-8BF9-0430E7BA972D</attributeRef>
+<attributeRef>9753A208-2F85-5EEC-7E92-7639F4F0E40D</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
