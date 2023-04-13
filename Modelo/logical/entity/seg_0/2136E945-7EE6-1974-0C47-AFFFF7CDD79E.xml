@@ -128,10 +128,10 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="id_Restaurante" id="E13C53ED-7F08-24D6-58A4-CDF4C5A969FE">
-<createdBy>danielacabal</createdBy>
-<createdTime>2023-04-08 02:25:51 UTC</createdTime>
-<generatorID>1BFDA66E-63D6-08AC-3EFE-9A2D6B0BBFCB</generatorID>
+<Attribute name="id_Restaurante" id="5EF21A31-23DC-1CF4-9D45-E34AF6D4876E">
+<createdBy>daniel</createdBy>
+<createdTime>2023-04-13 06:55:44 UTC</createdTime>
+<generatorID>0FA5C52E-B0A8-7CA3-A3B7-BA67D2C61A9D</generatorID>
 <ownerDesignName>Modelo</ownerDesignName>
 <engineerTo>
 <item key="1896A38C-8091-6971-BC17-955F9E21CDAB" value="true"/>
@@ -155,7 +155,6 @@
 <pk>true</pk>
 <usedAttributes>
 <attributeRef>A0A5F784-B4F0-690F-F247-EFDA71BB883E</attributeRef>
-<attributeRef>E13C53ED-7F08-24D6-58A4-CDF4C5A969FE</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

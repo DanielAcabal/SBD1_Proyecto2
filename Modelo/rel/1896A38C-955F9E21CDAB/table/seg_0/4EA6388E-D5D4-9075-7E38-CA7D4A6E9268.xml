@@ -1,0 +1,74 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="4EA6388E-D5D4-9075-7E38-CA7D4A6E9268" name="Puesto_Trabajo">
+<createdBy>daniel</createdBy>
+<createdTime>2023-04-12 22:20:53 UTC</createdTime>
+<generatorID>D27828B0-CF75-D480-B4A8-3F8996CCCCBB</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_Puesto" id="616AA1EF-912F-498C-BFD5-0DD52C3E05A2">
+<createdBy>daniel</createdBy>
+<createdTime>2023-04-12 22:20:53 UTC</createdTime>
+<generatorID>C29DDB03-C290-5220-7987-0E66FDFE47DD</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Nombre" id="5239B8D5-7073-F8FF-724D-34E47375D502">
+<createdBy>daniel</createdBy>
+<createdTime>2023-04-12 22:20:53 UTC</createdTime>
+<generatorID>6308601C-2166-13E6-DE1B-DBE627A7AEA8</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Descripcion" id="CA5E6342-0F37-E1FA-C93B-908FE6194542">
+<createdBy>daniel</createdBy>
+<createdTime>2023-04-12 22:20:53 UTC</createdTime>
+<generatorID>7DCD9356-9A52-E9F3-A0B6-5FD0EA00A458</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>75</dataTypeSize>
+<ownDataTypeParameters>75,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Salario" id="3112E27A-D9D0-F751-4406-4B90B7FC7B06">
+<createdBy>daniel</createdBy>
+<createdTime>2023-04-12 22:20:53 UTC</createdTime>
+<generatorID>78469468-DE55-90C0-A1EA-1EE8E9EE1549</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,5,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6DFBBB8B-E3BF-2254-57CB-CB4A99C2D7D9" name="Puesto_Trabajo_PK">
+<createdBy>daniel</createdBy>
+<createdTime>2023-04-12 22:20:53 UTC</createdTime>
+<generatorID>C3898D9C-192C-438C-5FB0-3EF3454FC864</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="616AA1EF-912F-498C-BFD5-0DD52C3E05A2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

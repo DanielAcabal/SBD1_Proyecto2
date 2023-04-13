@@ -1,0 +1,107 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E5F36523-5913-EB50-1637-55D81D605D32" name="Cliente">
+<createdBy>daniel</createdBy>
+<createdTime>2023-04-12 22:20:53 UTC</createdTime>
+<generatorID>AB1F7BDD-88A6-2FF7-1C6F-6974B5B04228</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="DPI_Cliente" id="7962F025-39C7-A811-742D-0B63FB62D02F">
+<createdBy>daniel</createdBy>
+<createdTime>2023-04-12 22:20:53 UTC</createdTime>
+<generatorID>7EBB12A8-C407-7A05-0930-F80C1271D878</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Nombre" id="234171B9-1D57-9F82-CB4B-484BB59FB899">
+<createdBy>daniel</createdBy>
+<createdTime>2023-04-12 22:20:53 UTC</createdTime>
+<generatorID>B1BCD234-610F-4897-2268-679D7051C1E6</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Apellidos" id="76635B37-F9AE-8134-506F-063279D162D7">
+<createdBy>daniel</createdBy>
+<createdTime>2023-04-12 22:20:53 UTC</createdTime>
+<generatorID>71F893DE-A4E3-8EBB-BD73-89E45B96D893</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Correo" id="4138C1D3-2E8A-7204-625C-A62CB8558016">
+<createdBy>daniel</createdBy>
+<createdTime>2023-04-12 22:20:53 UTC</createdTime>
+<generatorID>ACFA83C8-ECBA-680D-3172-B3C9CAD7A9B0</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Telefono" id="457D7E5C-597C-1D3F-8785-237E1FE53336">
+<createdBy>daniel</createdBy>
+<createdTime>2023-04-12 22:20:53 UTC</createdTime>
+<generatorID>0A9AC275-5F2D-94C7-7B55-FC7866F6AD84</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NIT" id="A5B1EC28-F105-2D68-EBF3-7C1428FD9B1D">
+<createdBy>daniel</createdBy>
+<createdTime>2023-04-12 22:20:53 UTC</createdTime>
+<generatorID>0FE62F22-9BF3-77B4-DDF4-2459ADBD1243</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Fecha_nacimiento" id="8C9DF858-E564-8670-F529-27748C9E3986">
+<createdBy>daniel</createdBy>
+<createdTime>2023-04-12 22:20:53 UTC</createdTime>
+<generatorID>BD377BF0-E5FD-8D37-1491-B3ECFC397EAC</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="F8C78AD7-1D2E-BD1E-159E-E8C80E02F117" name="Cliente_PK">
+<createdBy>daniel</createdBy>
+<createdTime>2023-04-12 22:20:53 UTC</createdTime>
+<generatorID>A2F3D33D-3118-113A-1679-7802878C6CC8</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7962F025-39C7-A811-742D-0B63FB62D02F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

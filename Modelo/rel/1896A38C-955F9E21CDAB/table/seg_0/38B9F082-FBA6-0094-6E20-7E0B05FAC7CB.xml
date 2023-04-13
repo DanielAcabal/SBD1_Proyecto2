@@ -1,0 +1,63 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="38B9F082-FBA6-0094-6E20-7E0B05FAC7CB" name="Producto">
+<createdBy>daniel</createdBy>
+<createdTime>2023-04-12 22:20:53 UTC</createdTime>
+<generatorID>79E39762-17A4-EFBC-7A4E-D5FE9889933D</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_Producto" id="4A13B4C0-4100-E2C3-30BC-C3DE8A02B0BD">
+<createdBy>daniel</createdBy>
+<createdTime>2023-04-12 22:20:53 UTC</createdTime>
+<generatorID>FD763993-592F-4AA7-36CD-4AD915DFEE71</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>3</dataTypeSize>
+<ownDataTypeParameters>3,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Nombre" id="27B8AA9A-EE36-C747-7E31-EA37A144D39E">
+<createdBy>daniel</createdBy>
+<createdTime>2023-04-12 22:20:53 UTC</createdTime>
+<generatorID>2D364E00-524A-8931-B49B-0EDAAAE3733A</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Precio" id="0E37FC1B-D385-D61B-8EC0-52E1F942DAD7">
+<createdBy>daniel</createdBy>
+<createdTime>2023-04-12 22:20:53 UTC</createdTime>
+<generatorID>17E60610-2FA9-56A4-B1B6-0096D395D71A</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT026</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,5,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="74F575C3-28F4-5B0E-A8A6-4B9AAE4DFC34" name="Producto_PK">
+<createdBy>daniel</createdBy>
+<createdTime>2023-04-12 22:20:53 UTC</createdTime>
+<generatorID>0F5AABC6-2BB5-F4BC-AB97-2878BA846221</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4A13B4C0-4100-E2C3-30BC-C3DE8A02B0BD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

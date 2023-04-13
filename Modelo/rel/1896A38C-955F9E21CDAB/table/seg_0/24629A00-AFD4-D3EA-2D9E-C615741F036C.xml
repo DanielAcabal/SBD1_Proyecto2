@@ -1,0 +1,126 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="24629A00-AFD4-D3EA-2D9E-C615741F036C" name="Restaurante">
+<createdBy>daniel</createdBy>
+<createdTime>2023-04-12 22:20:53 UTC</createdTime>
+<generatorID>A48B1C0C-AB6D-B72E-6129-FC033F24F296</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_Restaurante" id="75CEB6C0-AA26-1257-99C8-3EAAEE810249">
+<createdBy>daniel</createdBy>
+<createdTime>2023-04-12 22:20:53 UTC</createdTime>
+<generatorID>0B45028C-7815-6A18-02CD-4743D8708C5E</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Telefono" id="F09AB00B-FE2C-19CB-097F-38B722D57A6D">
+<createdBy>daniel</createdBy>
+<createdTime>2023-04-12 22:20:53 UTC</createdTime>
+<generatorID>A8046A49-46FA-5CFD-37FE-5C7F93612BAC</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Personal" id="69D376CF-F4BB-B62E-083B-77E9A8B196AA">
+<createdBy>daniel</createdBy>
+<createdTime>2023-04-12 22:20:53 UTC</createdTime>
+<generatorID>F6EA89A1-29FB-7F50-5F56-C574B1BAF8B8</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Parqueo" id="FFFE79BF-2366-E8FB-F8B1-2791CDDFEE8A">
+<createdBy>daniel</createdBy>
+<createdTime>2023-04-12 22:20:53 UTC</createdTime>
+<generatorID>83696ED9-47B3-B2EE-DA4E-98A5F160DADB</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1 BYTE</dataTypeSize>
+<ownDataTypeParameters>1 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Direccion_id_Direccion" id="2664FCEF-93BA-BC90-FCE9-F7E864D8D52D">
+<createdBy>daniel</createdBy>
+<createdTime>2023-04-12 22:20:53 UTC</createdTime>
+<generatorID>20CD1392-0CD2-D788-1F26-71A98046CFBF</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="EF2A13E8-D665-2500-FBAC-7A37AF47098E" referredColumn="029561C5-9174-7D77-A290-4646496F713F"/>
+</associations>
+</Column>
+<Column name="Direccion_Municipio_id_Municipio" id="268CE23E-452A-49BB-253F-D7ECFD17DB79">
+<createdBy>daniel</createdBy>
+<createdTime>2023-04-12 22:20:53 UTC</createdTime>
+<generatorID>2E93F7F1-B4C1-EE70-1FDF-9531F79B4413</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="EF2A13E8-D665-2500-FBAC-7A37AF47098E" referredColumn="B68D89F2-8A3F-16C0-769B-03F97F5D3A45"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A9767B37-251D-7DE1-82C2-760BF8EA21AD" name="Restaurante_PK">
+<createdBy>daniel</createdBy>
+<createdTime>2023-04-12 22:20:53 UTC</createdTime>
+<generatorID>72211DDF-EF29-6AC0-70B9-C7FCF87EC3C5</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="75CEB6C0-AA26-1257-99C8-3EAAEE810249"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F2915438-24EC-9245-8648-E2EE5383C8A2" name="Restaurante__IDX">
+<createdBy>daniel</createdBy>
+<createdTime>2023-04-12 22:20:54 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>E32C0DC0-6C36-9428-B74B-73E70E7AF7F7</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="2664FCEF-93BA-BC90-FCE9-F7E864D8D52D"/>
+<colUsage columnID="268CE23E-452A-49BB-253F-D7ECFD17DB79"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="27F51A84-7F22-FC7A-716F-56D6BBDC9DEB" name="Restaurante_Direccion_FK">
+<createdBy>daniel</createdBy>
+<createdTime>2023-04-12 22:20:54 UTC</createdTime>
+<generatorID>E32C0DC0-6C36-9428-B74B-73E70E7AF7F7</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2664FCEF-93BA-BC90-FCE9-F7E864D8D52D"/>
+<colUsage columnID="268CE23E-452A-49BB-253F-D7ECFD17DB79"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
