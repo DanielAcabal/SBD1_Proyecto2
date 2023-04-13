@@ -114,20 +114,34 @@
 <colAssociation fkAssociation="C9D021A8-4BC2-6B02-F263-9DD3146B88C2" referredColumn="616AA1EF-912F-498C-BFD5-0DD52C3E05A2"/>
 </associations>
 </Column>
-<Column name="Restaurante_id_Restaurante" id="E1B7C1EB-5901-3B7B-D7E0-DBBCA3624B3B">
+<Column name="Direccion_id_Direccion" id="B0FD3CD2-763D-E2A1-4EC5-F15F7D93C387">
 <createdBy>daniel</createdBy>
-<createdTime>2023-04-12 22:20:53 UTC</createdTime>
-<generatorID>E13C53ED-7F08-24D6-58A4-CDF4C5A969FE</generatorID>
+<createdTime>2023-04-13 16:54:25 UTC</createdTime>
+<generatorID>4DA936ED-708E-DDB9-6268-66F60C7CDCB1</generatorID>
 <ownerDesignName>Modelo</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>30</dataTypeSize>
+<logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="370CBF3F-BAD9-0C91-58BD-DDC6066AB7D7" referredColumn="75CEB6C0-AA26-1257-99C8-3EAAEE810249"/>
+<colAssociation fkAssociation="05ECE1FB-A245-E835-7F83-85BC02D70DAB" referredColumn="029561C5-9174-7D77-A290-4646496F713F"/>
+</associations>
+</Column>
+<Column name="Direccion_Municipio_id_Municipio" id="298E10B7-00E4-AD77-8F7F-5B48A02D2E35">
+<createdBy>daniel</createdBy>
+<createdTime>2023-04-13 16:54:25 UTC</createdTime>
+<generatorID>8943FBE8-52B3-016C-0536-29DE35116EAC</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="05ECE1FB-A245-E835-7F83-85BC02D70DAB" referredColumn="B68D89F2-8A3F-16C0-769B-03F97F5D3A45"/>
 </associations>
 </Column>
 </columns>
@@ -142,7 +156,18 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="E6028914-384C-AF63-E36B-3404FA04DEF5"/>
-<colUsage columnID="E1B7C1EB-5901-3B7B-D7E0-DBBCA3624B3B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8C4AF4BD-ACD2-1E72-672D-EA30FD1601D2" name="Empleado__IDX">
+<createdBy>daniel</createdBy>
+<createdTime>2023-04-13 16:54:25 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>028BD0BF-CBE8-BF9F-3081-9EEF2223D703</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="B0FD3CD2-763D-E2A1-4EC5-F15F7D93C387"/>
+<colUsage columnID="298E10B7-00E4-AD77-8F7F-5B48A02D2E35"/>
 </indexColumnUsage>
 </ind_PK_UK>
 <ind_PK_UK id="BEBD2457-903D-D223-1DE4-4AABDE838E7E" name="Empleado_Puesto_Trabajo_FK">
@@ -156,15 +181,16 @@
 <colUsage columnID="A8BE3122-6AD5-7CC0-EEB4-0949FCE47D44"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="EE1A0775-B995-5370-1CAB-6FD61A3A726A" name="Empleado_Restaurante_FK">
+<ind_PK_UK id="7EDD306D-6D7E-6CB9-C724-F63EE98BEBF4" name="Empleado_Direccion_FK">
 <createdBy>daniel</createdBy>
-<createdTime>2023-04-12 22:20:54 UTC</createdTime>
-<generatorID>1BFDA66E-63D6-08AC-3EFE-9A2D6B0BBFCB</generatorID>
+<createdTime>2023-04-13 16:54:25 UTC</createdTime>
+<generatorID>028BD0BF-CBE8-BF9F-3081-9EEF2223D703</generatorID>
 <ownerDesignName>Modelo</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="E1B7C1EB-5901-3B7B-D7E0-DBBCA3624B3B"/>
+<colUsage columnID="B0FD3CD2-763D-E2A1-4EC5-F15F7D93C387"/>
+<colUsage columnID="298E10B7-00E4-AD77-8F7F-5B48A02D2E35"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

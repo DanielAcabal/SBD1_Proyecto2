@@ -69,21 +69,6 @@
 <colAssociation fkAssociation="D2FF5829-CE34-BFB3-88F0-1DE0E710B19A" referredColumn="C5B25EB2-3B92-8546-1A7D-16301999083E"/>
 </associations>
 </Column>
-<Column name="Cliente_DPI_Cliente" id="40787024-21DF-2C25-7BA5-11AD3AF6925D">
-<createdBy>daniel</createdBy>
-<createdTime>2023-04-12 22:20:53 UTC</createdTime>
-<generatorID>516F89E7-228D-CF3A-F27F-5416D9A96908</generatorID>
-<ownerDesignName>Modelo</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT027</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="8F564412-9C65-AE14-EBCA-B0C8C915D321" referredColumn="7962F025-39C7-A811-742D-0B63FB62D02F"/>
-</associations>
-</Column>
 <Column name="Empleado_id_Empleado" id="FEAAE9DD-247F-5BCB-4EFE-C8B6272696E1">
 <createdBy>daniel</createdBy>
 <createdTime>2023-04-12 22:20:53 UTC</createdTime>
@@ -108,11 +93,53 @@
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Direccion_Entrega_Cliente_DPI_Cliente" id="1BCBE991-F3F6-6B37-ED5C-6887D80712DE">
+<createdBy>daniel</createdBy>
+<createdTime>2023-04-13 16:54:25 UTC</createdTime>
+<generatorID>80E47A09-A51D-CE16-ADA0-124557CA8FEE</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT027</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="E0E72DE6-BF99-142E-ABD5-EBB8031F2A22" referredColumn="E1B7C1EB-5901-3B7B-D7E0-DBBCA3624B3B"/>
+<colAssociation fkAssociation="89D59304-09C5-2DFF-EDA7-3D284CD44DA1" referredColumn="9A29B271-DA5D-69DE-4C8E-2213B4898F6A"/>
+</associations>
+</Column>
+<Column name="Direccion_Entrega_Direccion_id_Direccion" id="ADA7943E-72CE-D283-A5E8-7484B13511CD">
+<createdBy>daniel</createdBy>
+<createdTime>2023-04-13 16:54:25 UTC</createdTime>
+<generatorID>61B7A3C3-67AB-873F-53FD-0A8398444669</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="89D59304-09C5-2DFF-EDA7-3D284CD44DA1" referredColumn="04520AFB-6BE3-CCE0-B9E6-7440CA4A0970"/>
+</associations>
+</Column>
+<Column name="Direccion_Entrega_Direccion_Municipio_id_Municipio" id="EF7EA51A-03BD-BD77-EF1D-DC361649CC01">
+<createdBy>daniel</createdBy>
+<createdTime>2023-04-13 16:54:25 UTC</createdTime>
+<generatorID>FF6018F3-B342-CE47-8F23-F1462ED6C51B</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="89D59304-09C5-2DFF-EDA7-3D284CD44DA1" referredColumn="34A4C84F-1676-EC78-35DF-0B2C19B7CFAA"/>
 </associations>
 </Column>
 </columns>
@@ -129,17 +156,6 @@
 <colUsage columnID="B9D750E1-3D91-627F-415B-EA966C0CE834"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="A8675CEE-2C13-89F8-B6FA-CDF5984B2E46" name="Orden_Cliente_FK">
-<createdBy>daniel</createdBy>
-<createdTime>2023-04-12 22:20:54 UTC</createdTime>
-<generatorID>4AED9F30-E6F7-7D37-E0DA-AEC3314B54D8</generatorID>
-<ownerDesignName>Modelo</ownerDesignName>
-<indexState>Foreign Key</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
-<colUsage columnID="40787024-21DF-2C25-7BA5-11AD3AF6925D"/>
-</indexColumnUsage>
-</ind_PK_UK>
 <ind_PK_UK id="AB9CB027-C03E-524D-30F4-16069D813F6E" name="Orden_Empleado_FK">
 <createdBy>daniel</createdBy>
 <createdTime>2023-04-12 22:20:54 UTC</createdTime>
@@ -149,7 +165,6 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="FEAAE9DD-247F-5BCB-4EFE-C8B6272696E1"/>
-<colUsage columnID="F7D1A3D2-35B3-D4B4-184F-C9062892C558"/>
 </indexColumnUsage>
 </ind_PK_UK>
 <ind_PK_UK id="AE8B5077-27BF-B59A-EB74-873C3961B4FD" name="Orden_Estado_Orden_FK">
@@ -161,6 +176,19 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="89FCFA8F-8418-3831-7B20-0EE087A279EC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0A13A8A1-08C1-8BD6-6F65-2E8E8B34F052" name="Orden_Direccion_Entrega_FK">
+<createdBy>daniel</createdBy>
+<createdTime>2023-04-13 16:54:25 UTC</createdTime>
+<generatorID>FD04E94F-8E6E-AA4F-D20C-E41E185A3918</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1BCBE991-F3F6-6B37-ED5C-6887D80712DE"/>
+<colUsage columnID="ADA7943E-72CE-D283-A5E8-7484B13511CD"/>
+<colUsage columnID="EF7EA51A-03BD-BD77-EF1D-DC361649CC01"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>
