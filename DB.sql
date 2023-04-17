@@ -4,7 +4,7 @@ CREATE TABLE cliente (
     apellidos        VARCHAR(30) NOT NULL,
     correo           VARCHAR(30) NOT NULL,
     telefono         INTEGER NOT NULL,
-    nit              INTEGER,
+    nit              VARCHAR(12),
     fecha_nacimiento DATE NOT NULL
 );
 
@@ -103,7 +103,7 @@ CREATE TABLE orden (
 );
 CREATE TABLE detalle_orden (
     cantidad             INTEGER NOT NULL,
-    observacion          VARCHAR(50),
+    observacion          VARCHAR(100),
     id_orden             INTEGER NOT NULL,
     id_producto          VARCHAR(3) NOT NULL,
     CHECK ( cantidad >=0 ), -- Atención a esto xd
@@ -115,11 +115,11 @@ CREATE TABLE detalle_orden (
 
 CREATE TABLE factura (
     serie                         VARCHAR(16) NOT NULL PRIMARY KEY,
-    total                         DEC(6, 2) NOT NULL,
+    total                         DEC(8, 2) NOT NULL,
     id_municipio                  INTEGER NOT NULL,
     fecha                         DATETIME NOT NULL,
     id_orden                      INTEGER NOT NULL, 
-    nit                           INTEGER NOT NULL, 
+    nit                           VARCHAR(12) NOT NULL, 
     forma_pago                    CHAR(1) NOT NULL,
     CONSTRAINT factura_orden_fk FOREIGN KEY(id_orden) REFERENCES orden( id_orden )
 );
