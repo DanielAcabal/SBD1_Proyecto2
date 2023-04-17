@@ -93,6 +93,21 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="id_Restaurante" id="AB144CEC-43B6-264B-E4D2-603AEA4AA104">
+<createdBy>daniel</createdBy>
+<createdTime>2023-04-14 16:54:50 UTC</createdTime>
+<generatorID>2C32FCDE-9C6D-14E4-2102-F6C9FC0BEFD8</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="1896A38C-8091-6971-BC17-955F9E21CDAB" value="true"/>
+</engineerTo>
+<referedAttribute>B3FB7264-8E73-9BB2-B295-B2DAFF503352</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
 <Attribute name="DPI_Cliente" id="80E47A09-A51D-CE16-ADA0-124557CA8FEE">
 <createdBy>daniel</createdBy>
 <createdTime>2023-04-13 06:06:32 UTC</createdTime>

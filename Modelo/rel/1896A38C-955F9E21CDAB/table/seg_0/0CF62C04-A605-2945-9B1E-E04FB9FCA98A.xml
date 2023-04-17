@@ -114,34 +114,32 @@
 <colAssociation fkAssociation="C9D021A8-4BC2-6B02-F263-9DD3146B88C2" referredColumn="616AA1EF-912F-498C-BFD5-0DD52C3E05A2"/>
 </associations>
 </Column>
-<Column name="Direccion_id_Direccion" id="B0FD3CD2-763D-E2A1-4EC5-F15F7D93C387">
+<Column name="Direccion" id="C64763E6-9903-AEFD-0EA3-69363B8DADFE">
 <createdBy>daniel</createdBy>
-<createdTime>2023-04-13 16:54:25 UTC</createdTime>
-<generatorID>4DA936ED-708E-DDB9-6268-66F60C7CDCB1</generatorID>
+<createdTime>2023-04-14 18:17:26 UTC</createdTime>
+<generatorID>1045C3FF-093D-0E17-408D-5B31925BC487</generatorID>
 <ownerDesignName>Modelo</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>75</dataTypeSize>
+<ownDataTypeParameters>75,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="05ECE1FB-A245-E835-7F83-85BC02D70DAB" referredColumn="029561C5-9174-7D77-A290-4646496F713F"/>
-</associations>
 </Column>
-<Column name="Direccion_Municipio_id_Municipio" id="298E10B7-00E4-AD77-8F7F-5B48A02D2E35">
+<Column name="Restaurante_id_Restaurante" id="9EFE3CCE-2FFC-9337-C24B-E37EDC68936C">
 <createdBy>daniel</createdBy>
-<createdTime>2023-04-13 16:54:25 UTC</createdTime>
-<generatorID>8943FBE8-52B3-016C-0536-29DE35116EAC</generatorID>
+<createdTime>2023-04-14 18:17:26 UTC</createdTime>
+<generatorID>B3FB7264-8E73-9BB2-B295-B2DAFF503352</generatorID>
 <ownerDesignName>Modelo</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
-<colAssociation fkAssociation="05ECE1FB-A245-E835-7F83-85BC02D70DAB" referredColumn="B68D89F2-8A3F-16C0-769B-03F97F5D3A45"/>
+<colAssociation fkAssociation="5777627C-0152-4229-C022-4E7850FD4577" referredColumn="75CEB6C0-AA26-1257-99C8-3EAAEE810249"/>
 </associations>
 </Column>
 </columns>
@@ -156,18 +154,7 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="E6028914-384C-AF63-E36B-3404FA04DEF5"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="8C4AF4BD-ACD2-1E72-672D-EA30FD1601D2" name="Empleado__IDX">
-<createdBy>daniel</createdBy>
-<createdTime>2023-04-13 16:54:25 UTC</createdTime>
-<ownerDesignName>Modelo</ownerDesignName>
-<indexState>Unique Plain Index</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<relationGeneratorID>028BD0BF-CBE8-BF9F-3081-9EEF2223D703</relationGeneratorID>
-<indexColumnUsage>
-<colUsage columnID="B0FD3CD2-763D-E2A1-4EC5-F15F7D93C387"/>
-<colUsage columnID="298E10B7-00E4-AD77-8F7F-5B48A02D2E35"/>
+<colUsage columnID="9EFE3CCE-2FFC-9337-C24B-E37EDC68936C"/>
 </indexColumnUsage>
 </ind_PK_UK>
 <ind_PK_UK id="BEBD2457-903D-D223-1DE4-4AABDE838E7E" name="Empleado_Puesto_Trabajo_FK">
@@ -181,16 +168,15 @@
 <colUsage columnID="A8BE3122-6AD5-7CC0-EEB4-0949FCE47D44"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="7EDD306D-6D7E-6CB9-C724-F63EE98BEBF4" name="Empleado_Direccion_FK">
+<ind_PK_UK id="0F86F5C3-244E-2B58-BB73-4B5F13BA631C" name="Empleado_Restaurante_FK">
 <createdBy>daniel</createdBy>
-<createdTime>2023-04-13 16:54:25 UTC</createdTime>
-<generatorID>028BD0BF-CBE8-BF9F-3081-9EEF2223D703</generatorID>
+<createdTime>2023-04-14 18:17:26 UTC</createdTime>
+<generatorID>97096A72-BAB9-FBE3-47F7-0395E8BD95D1</generatorID>
 <ownerDesignName>Modelo</ownerDesignName>
 <indexState>Foreign Key</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="B0FD3CD2-763D-E2A1-4EC5-F15F7D93C387"/>
-<colUsage columnID="298E10B7-00E4-AD77-8F7F-5B48A02D2E35"/>
+<colUsage columnID="9EFE3CCE-2FFC-9337-C24B-E37EDC68936C"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

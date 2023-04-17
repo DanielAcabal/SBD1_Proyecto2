@@ -142,6 +142,22 @@
 <colAssociation fkAssociation="89D59304-09C5-2DFF-EDA7-3D284CD44DA1" referredColumn="34A4C84F-1676-EC78-35DF-0B2C19B7CFAA"/>
 </associations>
 </Column>
+<Column name="Empleado_Restaurante_id_Restaurante" id="9C97C911-D3D1-47FB-4D64-5AFB3EBB3A3D">
+<createdBy>daniel</createdBy>
+<createdTime>2023-04-14 18:17:26 UTC</createdTime>
+<generatorID>AB144CEC-43B6-264B-E4D2-603AEA4AA104</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E0E72DE6-BF99-142E-ABD5-EBB8031F2A22" referredColumn="9EFE3CCE-2FFC-9337-C24B-E37EDC68936C"/>
+</associations>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="74CBF38F-F699-9810-A5EF-63D1A39F886A" name="Orden_PK">
@@ -165,6 +181,7 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="FEAAE9DD-247F-5BCB-4EFE-C8B6272696E1"/>
+<colUsage columnID="9C97C911-D3D1-47FB-4D64-5AFB3EBB3A3D"/>
 </indexColumnUsage>
 </ind_PK_UK>
 <ind_PK_UK id="AE8B5077-27BF-B59A-EB74-873C3961B4FD" name="Orden_Estado_Orden_FK">

@@ -84,21 +84,6 @@
 <colAssociation fkAssociation="EF2A13E8-D665-2500-FBAC-7A37AF47098E" referredColumn="B68D89F2-8A3F-16C0-769B-03F97F5D3A45"/>
 </associations>
 </Column>
-<Column name="Empleado_id_Empleado" id="03263223-F3D2-6660-624A-8F3DA05E5536">
-<createdBy>daniel</createdBy>
-<createdTime>2023-04-13 16:54:25 UTC</createdTime>
-<generatorID>C0F4265D-848B-B0F4-E77A-103BB2DC51FD</generatorID>
-<ownerDesignName>Modelo</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<previousColumn>false</previousColumn>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="4089A301-F182-6165-A04A-30290C6F9588" referredColumn="E6028914-384C-AF63-E36B-3404FA04DEF5"/>
-</associations>
-</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="A9767B37-251D-7DE1-82C2-760BF8EA21AD" name="Restaurante_PK">
@@ -125,17 +110,6 @@
 <colUsage columnID="268CE23E-452A-49BB-253F-D7ECFD17DB79"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="07E0FCD4-FBDE-2C46-A58E-FCFC40A2126D" name="Restaurante__IDX">
-<createdBy>daniel</createdBy>
-<createdTime>2023-04-13 16:54:25 UTC</createdTime>
-<ownerDesignName>Modelo</ownerDesignName>
-<indexState>Unique Plain Index</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<relationGeneratorID>7A167A7B-B201-5676-9DE9-168D0BBC3171</relationGeneratorID>
-<indexColumnUsage>
-<colUsage columnID="03263223-F3D2-6660-624A-8F3DA05E5536"/>
-</indexColumnUsage>
-</ind_PK_UK>
 <ind_PK_UK id="27F51A84-7F22-FC7A-716F-56D6BBDC9DEB" name="Restaurante_Direccion_FK">
 <createdBy>daniel</createdBy>
 <createdTime>2023-04-12 22:20:54 UTC</createdTime>
@@ -146,17 +120,6 @@
 <indexColumnUsage>
 <colUsage columnID="2664FCEF-93BA-BC90-FCE9-F7E864D8D52D"/>
 <colUsage columnID="268CE23E-452A-49BB-253F-D7ECFD17DB79"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="294A8C27-AD90-48FF-0288-2B2C42712EAB" name="Restaurante_Empleado_FK">
-<createdBy>daniel</createdBy>
-<createdTime>2023-04-13 16:54:25 UTC</createdTime>
-<generatorID>7A167A7B-B201-5676-9DE9-168D0BBC3171</generatorID>
-<ownerDesignName>Modelo</ownerDesignName>
-<indexState>Foreign Key</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
-<colUsage columnID="03263223-F3D2-6660-624A-8F3DA05E5536"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

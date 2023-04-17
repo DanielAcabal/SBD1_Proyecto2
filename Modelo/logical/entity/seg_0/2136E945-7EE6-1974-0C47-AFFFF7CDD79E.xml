@@ -78,6 +78,19 @@
 <dataTypeSize>30</dataTypeSize>
 <ownDataTypeParameters>30,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="Direccion" id="1045C3FF-093D-0E17-408D-5B31925BC487">
+<createdBy>daniel</createdBy>
+<createdTime>2023-04-14 16:55:30 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="1896A38C-8091-6971-BC17-955F9E21CDAB" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>75</dataTypeSize>
+<ownDataTypeParameters>75,,</ownDataTypeParameters>
+</Attribute>
 <Attribute name="Telefono" id="E4DC290B-B6E8-90E6-0935-09F82313C821">
 <createdBy>danielacabal</createdBy>
 <createdTime>2023-04-07 21:57:42 UTC</createdTime>
@@ -128,32 +141,19 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="id_Direccion" id="4DA936ED-708E-DDB9-6268-66F60C7CDCB1">
+<Attribute name="id_Restaurante" id="B3FB7264-8E73-9BB2-B295-B2DAFF503352">
 <createdBy>daniel</createdBy>
-<createdTime>2023-04-13 16:49:12 UTC</createdTime>
-<generatorID>028BD0BF-CBE8-BF9F-3081-9EEF2223D703</generatorID>
+<createdTime>2023-04-14 16:54:50 UTC</createdTime>
+<generatorID>97096A72-BAB9-FBE3-47F7-0395E8BD95D1</generatorID>
 <ownerDesignName>Modelo</ownerDesignName>
 <engineerTo>
 <item key="1896A38C-8091-6971-BC17-955F9E21CDAB" value="true"/>
 </engineerTo>
-<referedAttribute>A7BF34B8-8884-D397-07DF-BCDD0B7F2697</referedAttribute>
+<referedAttribute>0B45028C-7815-6A18-02CD-4743D8708C5E</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="id_Municipio" id="8943FBE8-52B3-016C-0536-29DE35116EAC">
-<createdBy>daniel</createdBy>
-<createdTime>2023-04-13 16:49:12 UTC</createdTime>
-<generatorID>028BD0BF-CBE8-BF9F-3081-9EEF2223D703</generatorID>
-<ownerDesignName>Modelo</ownerDesignName>
-<engineerTo>
-<item key="1896A38C-8091-6971-BC17-955F9E21CDAB" value="true"/>
-</engineerTo>
-<referedAttribute>7AA0222B-0F2E-6340-C248-4EB9F269611D</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
@@ -169,6 +169,7 @@
 <pk>true</pk>
 <usedAttributes>
 <attributeRef>A0A5F784-B4F0-690F-F247-EFDA71BB883E</attributeRef>
+<attributeRef>B3FB7264-8E73-9BB2-B295-B2DAFF503352</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>
