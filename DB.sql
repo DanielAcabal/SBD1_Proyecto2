@@ -123,6 +123,11 @@ CREATE TABLE factura (
     forma_pago                    CHAR(1) NOT NULL,
     CONSTRAINT factura_orden_fk FOREIGN KEY(id_orden) REFERENCES orden( id_orden )
 );
+CREATE TABLE historial (
+  fecha DATETIME,
+  descripcion VARCHAR(75),
+  tipo VARCHAR(10)
+);
 -- Insert Products
 INSERT INTO producto 
  VALUES 
