@@ -10,7 +10,8 @@ puesto:BEGIN
     LEAVE puesto;
   END IF;
     INSERT INTO puesto_trabajo(nombre, descripcion, salario)
-VALUES(nombre, descripcion, salario);
+VALUES(UPPER(nombre), descripcion, salario);
+  SELECT "Puesto registrado" AS MESSAGE;
 END;
 //
 CREATE PROCEDURE RegistrarCliente(
@@ -29,6 +30,7 @@ cliente:BEGIN
   END IF;
   INSERT INTO cliente 
   VALUES ( dpi,nombre,apellidos,correo,telefono,nit,nacimiento );
+  SELECT "Cliente registrado" AS MESSAGE;
 END;
 //
 CREATE PROCEDURE RegistrarDireccion(
@@ -48,11 +50,12 @@ direccion:BEGIN
     LEAVE direccion;
   END IF;
 
-  INSERT IGNORE INTO municipio (nombre) VALUES (municipio);
+  INSERT IGNORE INTO municipio (nombre) VALUES (UPPER(municipio));
   SELECT m.id_municipio into muni FROM municipio m WHERE m.nombre=municipio;
   INSERT INTO direccion (direccion,zona,id_municipio) VALUES (direccion,zona,muni);
   INSERT INTO direccion_entrega (dpi_cliente,id_direccion,id_municipio)
     VALUES (dpi,LAST_INSERT_ID(), muni);
+  SELECT "Direccion registrada" AS MESSAGE;
 END;
 //
 CREATE PROCEDURE CrearEmpleado(
@@ -68,8 +71,15 @@ CREATE PROCEDURE CrearEmpleado(
   IN restaurante VARCHAR(30)
 )
 empleado:BEGIN
-  IF check_with_regex('danchiacabal@gmail.com','^[a-zA-Z0-9_!#$%&*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+') != 0 THEN
+  DECLARE empleados,maximo INTEGER;
+  IF check_with_regex(correo,'^[a-zA-Z0-9_!#$%&*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+') != 0 THEN
     SELECT "Correo no válido" AS ERROR;
+    LEAVE empleado;
+  END IF;
+  SELECT COUNT(*) INTO empleados FROM empleado e WHERE e.id_restaurante=restaurante;
+  SELECT r.personal INTO maximo FROM restaurante r WHERE r.id_restaurante=restaurante;
+  IF empleados=maximo THEN
+    SELECT "Cantidad de empleados máxima" AS ERROR;
     LEAVE empleado;
   END IF;
   INSERT INTO empleado (nombres,apellidos,fecha_nacimiento,
@@ -77,6 +87,7 @@ empleado:BEGIN
                         id_restaurante)
     VALUES (nombres,apellidos,nacimiento,correo,telefono,direccion,dpi,inicio,
             puesto,restaurante);
+  SELECT "Empleado registrado" AS MESSAGE;
 END;
 //
 CREATE PROCEDURE RegistrarRestaurante(
@@ -98,10 +109,11 @@ restaurante:BEGIN
     SELECT "La cantidad de personal debe ser positiva" AS ERROR;
     LEAVE restaurante;
   END IF;
-  INSERT IGNORE INTO municipio (nombre) VALUES (municipio);
+  INSERT IGNORE INTO municipio (nombre) VALUES (UPPER(municipio));
   SELECT m.id_municipio into muni FROM municipio m WHERE m.nombre=municipio;
   INSERT INTO direccion (direccion,zona,id_municipio) VALUES (direccion,zona,muni);
   INSERT INTO restaurante VALUES (id,telefono,personal,parqueo,LAST_INSERT_ID(), muni);
+  SELECT "Restaurante registrado" AS MESSAGE;
 END;
 
 //
@@ -118,7 +130,7 @@ CREATE PROCEDURE CrearOrden(
   IN canal      CHAR(1)
 )
 orden:BEGIN
-  DECLARE muni,direc INTEGER;
+  DECLARE muni,direc,repartidor INTEGER;
   DECLARE res VARCHAR(30);
   IF NOT existe_cliente(dpi) THEN
     SELECT CONCAT('No existe el cliente ',dpi) AS ERROR;
@@ -146,6 +158,7 @@ orden:BEGIN
   canal,fecha_inicio,fecha_entrega,id_estado,dpi_cliente,id_direccion,id_municipio,id_restaurante
  ) VALUES 
   ( canal, NOW(), NULL, getEstado("INICIADA"), dpi, direc, muni, res); -- Revisar xd 
+  SELECT "Orden creada" AS MESSAGE;
 END;
 //
 DELIMITER //
@@ -242,6 +255,7 @@ item:BEGIN
     INSERT INTO detalle_orden
     VALUES ( cantidad,observacion,id_orden,id_producto ); 
   END IF;
+  SELECT "Item agregado" AS MESSAGE;
 END
 //
 CREATE FUNCTION getTotal(id_orden INTEGER)
@@ -252,6 +266,12 @@ BEGIN
     JOIN producto p ON d.id_producto=p.id_producto
     WHERE d.id_orden=id_orden
   );
+END
+//
+CREATE FUNCTION getPuesto(nombre VARCHAR(30))
+RETURNS INTEGER
+BEGIN
+  RETURN (SELECT id_puesto FROM puesto_trabajo p WHERE p.nombre=nombre);
 END
 //
 CREATE PROCEDURE ConfirmarOrden(
@@ -282,7 +302,8 @@ confirmar:BEGIN
     LEAVE confirmar;
   END IF;
   UPDATE orden o
-    SET o.id_estado=getEstado("EN CAMINO") 
+    SET o.id_estado=getEstado("EN CAMINO"),
+        o.repartidor= repartidor
     WHERE o.id_orden=id_orden;  
   SELECT getTotal(id_orden) INTO total;
   SELECT nit INTO nit FROM cliente WHERE dpi_cliente=dpi;
@@ -291,6 +312,7 @@ confirmar:BEGIN
   END IF;
   INSERT INTO factura 
   VALUES ( CONCAT(YEAR(NOW()),id_orden), total+total*0.12 , muni , NOW(), id_orden, nit , forma_pago );
+  SELECT "Orden confirmada" AS MESSAGE;
 END
 //
 CREATE PROCEDURE FinalizarOrden (
@@ -311,4 +333,5 @@ fin:BEGIN
     SET o.id_estado=getEstado("ENTREGADA"),
         o.fecha_entrega= NOW()
     WHERE o.id_orden=id_orden;
+  SELECT "Orden finalizada" AS MESSAGE;
 END
