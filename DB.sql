@@ -60,7 +60,7 @@ CREATE TABLE restaurante (
 );
 
 CREATE TABLE empleado (
-    id_empleado                INTEGER NOT NULL  AUTO_INCREMENT,
+    id_empleado                INT(8) ZEROFILL NOT NULL  AUTO_INCREMENT,
     nombres                    VARCHAR(30) NOT NULL,
     apellidos                  VARCHAR(30) NOT NULL,
     fecha_nacimiento           DATE NOT NULL,
@@ -91,7 +91,7 @@ CREATE TABLE orden (
     fecha_inicio            DATETIME NOT NULL,
     fecha_entrega           DATETIME,
     id_estado               INTEGER NOT NULL,
-    repartidor              INTEGER,
+    repartidor              INT(8) UNSIGNED,
     id_restaurante          VARCHAR(30),
     dpi_cliente             BIGINT NOT NULL,
     id_direccion            INTEGER ,
@@ -104,7 +104,7 @@ CREATE TABLE orden (
 CREATE TABLE detalle_orden (
     cantidad             INTEGER NOT NULL,
     observacion          VARCHAR(100),
-    id_orden             INTEGER NOT NULL,
+    id_orden             INT(8) NOT NULL,
     id_producto          VARCHAR(3) NOT NULL,
     CHECK ( cantidad >=0 ), -- Atención a esto xd
     CONSTRAINT detalle_orden_pk PRIMARY KEY(id_orden,id_producto),

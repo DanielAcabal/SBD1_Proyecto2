@@ -2,16 +2,24 @@ DELIMITER //
 -- Listar Restaurantes 
 CREATE PROCEDURE ListarRestaurantes()
 BEGIN
-  SELECT r.id_restaurante,r.telefono,r.personal,(CASE WHEN r.parqueo THEN "Si" ELSE "No" END)AS parqueo,d.direccion,d.zona,m.nombre FROM restaurante r
-  JOIN direccion d ON r.id_direccion=d.id_direccion
-  JOIN municipio m ON d.id_municipio=m.id_municipio;
+  SELECT r.id_restaurante,
+        r.telefono,
+        r.personal,
+        (CASE WHEN r.parqueo THEN "Si" ELSE "No" END)AS parqueo,
+        d.direccion,
+        d.zona,
+        m.nombre 
+    FROM restaurante r
+    JOIN direccion d ON r.id_direccion=d.id_direccion
+    JOIN municipio m ON d.id_municipio=m.id_municipio;
 END
 //
 -- Consultar Empleado
 CREATE PROCEDURE ConsultarEmpleado(
-  IN id_empleado
+  IN id_empleado INT(8) UNSIGNED
 )
 empleado:BEGIN
+  -- Verificando si existe el empleado
   IF NOT existe_empleado(id_empleado) THEN
     SELECT CONCAT("No existe el empleado ",id_empleado) AS ERROR;
     LEAVE empleado;
@@ -33,9 +41,10 @@ END
 //
 -- Consultar detalle de pedido
 CREATE PROCEDURE ConsultarPedidosCliente(
-  IN id_orden INTEGER
+  IN id_orden INTEGER 
 )
 pedido:BEGIN
+  -- Verificando si existe la orden
   IF NOT existe_orden(id_orden) THEN
     SELECT CONCAT("No existe la orden ",id_empleado) AS ERROR;
     LEAVE pedido;
@@ -46,7 +55,7 @@ pedido:BEGIN
         WHEN "B" THEN "Bebida"
         WHEN "P" THEN "Postre"
         WHEN "E" THEN "Extra"
-        END CASE
+        END 
         ) AS tipo,
         p.precio,
         d.cantidad,
@@ -61,6 +70,7 @@ CREATE PROCEDURE ConsultarHistorialOrdener(
   IN dpi_cliente BIGINT
 )
 historial:BEGIN
+  -- Verificando si existe cliente
   IF NOT existe_cliente(dpi_cliente) THEN
     SELECT CONCAT("No existe el cliente ",id_empleado) AS ERROR;
     LEAVE historial;
@@ -84,6 +94,7 @@ CREATE PROCEDURE ConsultarDirecciones(
   IN dpi_cliente BIGINT
 )
 direccion:BEGIN
+  -- Verificando si existe cliente
   IF NOT existe_cliente(dpi_cliente) THEN
     SELECT CONCAT("No existe el cliente ",id_empleado) AS ERROR;
     LEAVE direccion;
@@ -103,12 +114,14 @@ CREATE PROCEDURE MostrarOrdenes(
 )
 BEGIN
   DECLARE estado VARCHAR(20);
+  -- Parseo de estados
   SELECT (CASE id_estado
     WHEN 1 THEN "INICIADA" 
     WHEN 2 THEN "AGREGANDO"
     WHEN 3 THEN "EN CAMINO" 
     WHEN 4 THEN "ENTREGADA" 
     WHEN -1 THEN "SIN COBERTURA" 
+    ELSE ""
   END) INTO estado;
   SELECT o.id_orden,
         estado,
@@ -126,8 +139,8 @@ END
 //
 -- Consultar Facturas
 CREATE PROCEDURE ConsultarFacturas(
-  IN dia INTEGER
-  IN mes INTEGER
+  IN dia INTEGER,
+  IN mes INTEGER,
   IN anio INTEGER
 )
 BEGIN
@@ -148,10 +161,11 @@ CREATE PROCEDURE ConsultarTiempos(
   IN minutos INTEGER
 )
 tiempos:BEGIN
+  -- Validando minutos positivos
   IF minutos < 0 THEN
     SELECT "Los minutos deben ser positivos" AS ERROR;
     LEAVE tiempos;
-  END IF
+  END IF;
   SELECT o.id_orden, 
         CONCAT(d.direccion,", Zona ",d.zona,", ",m.nombre) AS direccion_entrega,
         o.fecha_inicio,
