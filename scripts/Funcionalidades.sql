@@ -10,6 +10,11 @@ puesto:BEGIN
     SELECT "El salario debe ser positivo" AS ERROR;
     LEAVE puesto;
   END IF;
+  -- Validando si existe 
+  IF (SELECT p.id_puesto FROM puesto_trabajo p WHERE p.nombre=UPPER(nombre)) IS NOT NULL THEN
+    SELECT CONCAT("El puesto ", nombre, " ya existe") AS ERROR;
+    LEAVE puesto;
+  END IF;
   -- Se guarda en mayúsculas para no repetir puesto
     INSERT INTO puesto_trabajo(nombre, descripcion, salario)
 VALUES(UPPER(nombre), descripcion, salario);
@@ -29,6 +34,11 @@ cliente:BEGIN
   -- Validando correo
   IF check_with_regex(correo,'^[a-zA-Z0-9_!#$%&*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+') != 0 THEN
     SELECT "Correo no válido" AS ERROR;
+    LEAVE cliente;
+  END IF;
+  -- Si existe cliente
+  IF existe_cliente(dpi) THEN
+    SELECT CONCAT("El cliente ", dpi, " ya existe") AS ERROR;
     LEAVE cliente;
   END IF;
   -- Registrando cliente
@@ -86,6 +96,21 @@ empleado:BEGIN
     SELECT "Correo no válido" AS ERROR;
     LEAVE empleado;
   END IF;
+  -- Si existe dpi empleado
+  IF existe_dpi_empleado(dpi) THEN
+    SELECT CONCAT("El empleado ", dpi, " ya existe") AS ERROR;
+    LEAVE empleado;
+  END IF;
+  -- Si no existe puesto
+  IF NOT existe_puesto(puesto) THEN
+    SELECT CONCAT("El puesto ", puesto, " no existe") AS ERROR;
+    LEAVE empleado;
+  END IF;
+  -- Si no existe restaurante 
+  IF NOT existe_restaurante(restaurante) THEN
+    SELECT CONCAT("El restaurante ", restaurante, " no existe") AS ERROR;
+    LEAVE empleado;
+  END IF;
   -- Obteniendo empleados del restaurante
   SELECT COUNT(*) INTO empleados FROM empleado e WHERE e.id_restaurante=restaurante;
   -- Obteniendo capacidad máxima de personal
@@ -130,6 +155,11 @@ restaurante:BEGIN
     SELECT "El parqueo debe ser 0(No) o 1(Si)" AS ERROR;
     LEAVE restaurante;
   END IF;
+  -- Si existe restaurante
+  IF existe_restaurante(id) THEN
+    SELECT CONCAT("El restaurante ", id, " ya existe") AS ERROR;
+    LEAVE restaurante;
+  END IF;
   -- Ingresando municipio
   INSERT IGNORE INTO municipio (nombre) VALUES (UPPER(municipio));
   -- Obteniendo id municipio
@@ -167,8 +197,14 @@ orden:BEGIN
     SELECT 'Solamente puede usar canal L o A' AS ERROR;
     LEAVE orden;
   END IF;
+   -- Verificando si el cliente tiene registrada la dirección
+  SELECT id_direccion,id_municipio INTO direc,muni FROM direccion_entrega WHERE dpi_cliente=dpi AND id_direccion=direccion;
+  IF direc IS NULL OR muni IS NULL THEN
+    SELECT 'Esta direccion no la tiene registrada' AS ERROR;
+    LEAVE orden;
+  END IF;
   -- Si hay un restaurante en la misma zona y municipio
-  CALL datos_cobertura(dpi,res);
+  CALL datos_cobertura(dpi,direccion,res);
   IF res IS NULL THEN
     SELECT 'Sin cobertura' AS ERROR;
     -- Se guarda la orden como sin cobertura
@@ -177,12 +213,6 @@ orden:BEGIN
  ) VALUES 
   ( canal, NOW(), NULL, getEstado("SIN COBERTURA"), dpi, direccion, muni, res); -- Revisar xd 
   LEAVE orden;
-  END IF;
-  -- Verificando si el cliente tiene registrada la dirección
-  SELECT id_direccion,id_municipio INTO direc,muni FROM direccion_entrega WHERE dpi_cliente=dpi AND id_direccion=direccion;
-  IF direc IS NULL OR muni IS NULL THEN
-    SELECT 'Esta direccion no la tiene registrada' AS ERROR;
-    LEAVE orden;
   END IF;
   -- Creando la orden
  INSERT INTO orden (
@@ -193,14 +223,14 @@ orden:BEGIN
 END;
 //
 DELIMITER //
-CREATE PROCEDURE datos_cobertura(dpi BIGINT, OUT res VARCHAR(30))
+CREATE PROCEDURE datos_cobertura(dpi BIGINT, direc INTEGER, OUT res VARCHAR(30))
 BEGIN
 SELECT t.id_restaurante INTO res FROM ( SELECT r.id_restaurante,d.zona,d.id_municipio FROM restaurante r
   JOIN direccion d ON r.id_direccion=d.id_direccion) t
   JOIN (
   SELECT d1.*,d.dpi_cliente FROM direccion_entrega d 
   JOIN direccion d1 ON d.id_direccion=d1.id_direccion
-  WHERE d.dpi_cliente=dpi) t1
+  WHERE d.dpi_cliente=dpi AND d.id_direccion=direc) t1
   ON t.zona=t1.zona AND t.id_municipio=t1.id_municipio
   LIMIT 1;
 END
@@ -227,6 +257,24 @@ CREATE FUNCTION existe_empleado( id INTEGER )
 RETURNS BOOLEAN
 BEGIN
 	RETURN  (SELECT EXISTS(SELECT 1  FROM empleado WHERE id_empleado=id));
+END
+//
+CREATE FUNCTION existe_dpi_empleado( dpi BIGINT )
+RETURNS BOOLEAN
+BEGIN
+	RETURN  (SELECT EXISTS(SELECT 1  FROM empleado e WHERE e.dpi=dpi));
+END
+//
+CREATE FUNCTION existe_puesto( id INTEGER )
+RETURNS BOOLEAN
+BEGIN
+	RETURN  (SELECT EXISTS(SELECT 1  FROM puesto_trabajo WHERE id_puesto=id));
+END
+//
+CREATE FUNCTION existe_restaurante( id VARCHAR(30) )
+RETURNS BOOLEAN
+BEGIN
+	RETURN  (SELECT EXISTS(SELECT 1  FROM restaurante WHERE id_restaurante=id));
 END
 //
 CREATE FUNCTION existe_orden( id_orden INTEGER )
@@ -335,14 +383,14 @@ confirmar:BEGIN
     SELECT "Forma de pago no válida" AS ERROR;
     LEAVE confirmar;
   END IF;
-  -- Validando que el empleado exista
-   IF NOT existe_empleado(repartidor) THEN
-    SELECT CONCAT("No existe el empleado ",repartidor) AS ERROR;
-    LEAVE confirmar;
-  END IF;
   -- Verificando que exista la orden
    IF NOT existe_orden(id_orden) THEN
     SELECT CONCAT("La orden ",id_orden," no existe") AS ERROR;
+    LEAVE confirmar;
+  END IF;
+  -- Validando que el empleado exista
+   IF NOT existe_empleado(repartidor) THEN
+    SELECT CONCAT("No existe el empleado ",repartidor) AS ERROR;
     LEAVE confirmar;
   END IF;
   -- Obteniendo datos de la orden

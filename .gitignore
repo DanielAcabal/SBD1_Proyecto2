@@ -2,3 +2,7 @@
 **/*.local
 **/*.git
 **/*.DS_Store
+Calls.sql
+Test.sql
+Todo.txt
+Triggers.sh

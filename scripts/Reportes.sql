@@ -44,9 +44,15 @@ CREATE PROCEDURE ConsultarPedidosCliente(
   IN id_orden INTEGER 
 )
 pedido:BEGIN
+  DECLARE estado INTEGER;
   -- Verificando si existe la orden
   IF NOT existe_orden(id_orden) THEN
-    SELECT CONCAT("No existe la orden ",id_empleado) AS ERROR;
+    SELECT CONCAT("No existe la orden ",id_orden) AS ERROR;
+    LEAVE pedido;
+  END IF;
+  SELECT o.id_estado INTO estado FROM orden o WHERE o.id_orden=id_orden;
+  IF estado=getEstado("SIN COBERTURA") THEN
+    SELECT "Orden sin conbertura" AS ERROR;
     LEAVE pedido;
   END IF;
   SELECT p.nombre,
@@ -66,13 +72,13 @@ pedido:BEGIN
 END
 //
 -- Consultar el historial de órdenes de un cliente
-CREATE PROCEDURE ConsultarHistorialOrdener(
+CREATE PROCEDURE ConsultarHistorialOrdenes(
   IN dpi_cliente BIGINT
 )
 historial:BEGIN
   -- Verificando si existe cliente
   IF NOT existe_cliente(dpi_cliente) THEN
-    SELECT CONCAT("No existe el cliente ",id_empleado) AS ERROR;
+    SELECT CONCAT("No existe el cliente ",dpi_cliente) AS ERROR;
     LEAVE historial;
   END IF;
   SELECT o.id_orden,
@@ -96,7 +102,7 @@ CREATE PROCEDURE ConsultarDirecciones(
 direccion:BEGIN
   -- Verificando si existe cliente
   IF NOT existe_cliente(dpi_cliente) THEN
-    SELECT CONCAT("No existe el cliente ",id_empleado) AS ERROR;
+    SELECT CONCAT("No existe el cliente ", dpi_cliente) AS ERROR;
     LEAVE direccion;
   END IF;
   SELECT d2.direccion,
